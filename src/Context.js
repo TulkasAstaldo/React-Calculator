@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Context = React.createContext();
 
 function ContextProvider({ children }) {
-  const [display, setDisplay] = useState("0");
+  const [display, setDisplay] = useState(["0"]);
 
   const handleClick = (event) => {
     const { id, value } = event.target;
@@ -11,7 +11,7 @@ function ContextProvider({ children }) {
       setDisplay(["0"]);
     } else if (id === "number" || id === "dot" || id === "operator") {
       setDisplay((prev) =>
-        prev.length === 1 && prev[0] === "0" ? value : [...prev, value].join("")
+        prev.length === 1 && prev[0] === "0" ? value : [...prev, value]
       );
       console.log(display);
     } else if (id === "del") {
@@ -23,7 +23,7 @@ function ContextProvider({ children }) {
 
       console.log(display);
     } else if (id === "equals") {
-      setDisplay((prev) => [eval(prev)]);
+      setDisplay((prev) => [eval(prev.join(""))]);
     }
   };
 
