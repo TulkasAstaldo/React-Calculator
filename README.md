@@ -1,3 +1,9 @@
+## React Calculator
+A simple calculator using React and React Context to manage state. 
+
+### Warning:
+Uses eval() function just for the display functionality. Never use eval() in your projects!!!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
