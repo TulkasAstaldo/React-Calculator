@@ -7,12 +7,15 @@ function ContextProvider({ children }) {
 
   const handleClick = (event) => {
     const { id, value } = event.target;
+
     if (id === "clear") {
       setDisplay(["0"]);
     } else if (id === "number" || id === "dot" || id === "operator") {
-      setDisplay((prev) =>
-        prev.length === 1 && prev[0] === "0" ? value : [...prev, value]
-      );
+      if (display.length <= 30) {
+        setDisplay((prev) =>
+          prev.length === 1 && prev[0] === "0" ? value : [...prev, value]
+        );
+      }
       console.log(display);
     } else if (id === "del") {
       setDisplay((prev) => {

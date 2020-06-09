@@ -7,8 +7,8 @@ const Display = () => {
 
   return (
     <div className="display">
-      <div className={display.length >= 15 ? "digits-small" : "digits"}>
-        {display}{" "}
+      <div className={display.length >= 8 ? "digits-small" : "digits"}>
+        {display}
       </div>
     </div>
   );

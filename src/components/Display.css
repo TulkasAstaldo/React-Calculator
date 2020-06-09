@@ -20,5 +20,5 @@
   width: 80%;
   font-size: 2em;
   text-align: end;
-  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
